@@ -6,18 +6,38 @@ services:
       - NS=alice
       context: .
       dockerfile: docker/Dockerfile
-    command: tail -f /dev/null
+    command: >
+      bash -c "
+        set -e
+
+        mkdir -p /root/.0L
+        echo ${GITHUB_TOKEN} > /root/.0L/github_token.txt
+
+        tail -f /dev/null"
   bob:
     build:
       args:
       - NS=bob
       context: .
       dockerfile: docker/Dockerfile
-    command: tail -f /dev/null
+    command: >
+      bash -c "
+        set -e
+
+        mkdir -p /root/.0L
+        echo ${GITHUB_TOKEN} > /root/.0L/github_token.txt
+
+        tail -f /dev/null"
   carol:
     build:
       args:
       - NS=carol
       context: .
       dockerfile: docker/Dockerfile
-    command: tail -f /dev/null
+    command: >
+      bash -c "
+        set -e
+
+        echo ${GITHUB_TOKEN} > /root/.0L/github_token.txt
+
+        tail -f /dev/null"

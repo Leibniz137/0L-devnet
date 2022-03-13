@@ -5,16 +5,19 @@ services:
       args:
       - NS=alice
       context: .
+      dockerfile: docker/Dockerfile
     command: tail -f /dev/null
   bob:
     build:
       args:
       - NS=bob
       context: .
+      dockerfile: docker/Dockerfile
     command: tail -f /dev/null
   carol:
     build:
       args:
       - NS=carol
       context: .
+      dockerfile: docker/Dockerfile
     command: tail -f /dev/null

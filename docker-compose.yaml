@@ -1,11 +1,20 @@
 version: "3.9"
 services:
   alice:
-    build: .
+    build:
+      args:
+      - NS=alice
+      context: .
     command: tail -f /dev/null
   bob:
-    build: .
+    build:
+      args:
+      - NS=bob
+      context: .
     command: tail -f /dev/null
   carol:
-    build: .
+    build:
+      args:
+      - NS=carol
+      context: .
     command: tail -f /dev/null

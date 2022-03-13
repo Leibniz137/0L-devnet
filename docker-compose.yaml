@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  alice:
+    build: .
+    command: tail -f /dev/null
+  bob:
+    build: .
+    command: tail -f /dev/null
+  carol:
+    build: .
+    command: tail -f /dev/null

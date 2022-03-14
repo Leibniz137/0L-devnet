@@ -1,4 +1,12 @@
 version: "3.9"
+
+# NOTE: these ip-addresses are hardcoded on the 0L-devnet branch of Leibniz137/libra.git
+networks:
+  0L:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+
 services:
   alice:
     build:
@@ -14,6 +22,9 @@ services:
         echo ${GITHUB_TOKEN} > /root/.0L/github_token.txt
 
         tail -f /dev/null"
+    networks:
+      0L:
+        ipv4_address: 172.20.0.4
   bob:
     build:
       args:
@@ -28,6 +39,9 @@ services:
         echo ${GITHUB_TOKEN} > /root/.0L/github_token.txt
 
         tail -f /dev/null"
+    networks:
+      0L:
+        ipv4_address: 172.20.0.5
   carol:
     build:
       args:
@@ -42,3 +56,6 @@ services:
         echo ${GITHUB_TOKEN} > /root/.0L/github_token.txt
 
         tail -f /dev/null"
+    networks:
+      0L:
+        ipv4_address: 172.20.0.6

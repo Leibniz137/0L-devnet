@@ -38,6 +38,7 @@ services:
       bash -c "
         set -e
 
+        mkdir -p /root/.0L
         echo ${GITHUB_TOKEN} > /root/.0L/github_token.txt
 
         tail -f /dev/null"

@@ -13,7 +13,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld rsync
 
 # NOTE: code expects repo path is ~/libra
-COPY submodules/libra /root/libra
+WORKDIR /root
+RUN git clone https://github.com/Leibniz137/libra.git
 
 RUN bash /root/libra/ol/util/setup.sh
 

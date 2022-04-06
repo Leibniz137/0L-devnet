@@ -25,6 +25,11 @@ ENV RUSTC_WRAPPER=sccache
 ENV PATH /root/.cargo/bin/:${PATH}
 RUN make bins
 
+RUN cd /root \
+  && git clone https://github.com/Leibniz137/dev-genesis.git \
+  && git clone https://github.com/Leibniz137/dev-epoch-archive \
+  && cd libra && git checkout 0L-devnet
+
 # put this at the end so they can share most layers
 ARG NS
 ENV NS $NS

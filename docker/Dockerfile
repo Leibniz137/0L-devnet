@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # NOTE: moving this `apt install` outside of setup.sh seems to help prevent getting prompted
 # by one of the package installs
-RUN apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld
+RUN apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-config libssl-dev lld rsync
 
 # NOTE: code expects repo path is ~/libra
 COPY submodules/libra /root/libra

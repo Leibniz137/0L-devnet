@@ -14,7 +14,9 @@ RUN apt install -y git tmux jq build-essential cmake clang llvm libgmp-dev pkg-c
 
 # NOTE: code expects repo path is ~/libra
 WORKDIR /root
-RUN git clone https://github.com/Leibniz137/libra.git
+RUN git clone https://github.com/Leibniz137/libra.git \
+ && cd libra \
+ && git checkout v6
 
 RUN bash /root/libra/ol/util/setup.sh
 

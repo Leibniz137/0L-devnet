@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 
 ENV NODE_ENV=test
 ENV TEST=y
